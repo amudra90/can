@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conditional Alerting</title>
+</head>
+<body>
+<div align="center">
+    <form action="" method="post">
+    	<h1 style="font-size:2vw">Conditional Alerting</h1>
+        <p>
+            <label for="companyName">Company Name:</label>
+            <input type="text" name="companyName">
+        </p>
+        <p>
+            <label for="proximityLevel">Proximity Level:</label>
+            <input type="text" name="proximityLevel">
+        </p>
+        <div>
+            <label size="160" for="articleLink">URL / Text: </label>
+            <textarea id="articleLink" name="articleLink" style="font-size:10pt;height:120px;width:200px;" ></textarea>
+        </div>
+        <p>
+            <input type="submit">
+        </p>
+    </form>
+
+    {% if message %}
+       <p>Risk Level: {{ message[0] }}</p>
+       <p>Severity Level: {{ message[1] }}</p>
+       <p>Proximity Level: {{ message[2] }}</p>
+    {% endif %}
+    <!--<h1 style="font-size:1vw">By Orion Business Innovations.</h1>-->
+</div>
+</body>
+</html>
